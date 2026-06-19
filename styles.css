@@ -1,0 +1,1308 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap');
+
+:root {
+  --color-primary: #FF9E7D;       /* Meleg barack / korall */
+  --color-primary-dark: #E07A5F;
+  --color-primary-light: #FFEBE3;
+  --color-secondary: #8CD3B7;     /* Lágy menta / zsálya */
+  --color-secondary-dark: #6CBA9B;
+  --color-secondary-light: #EBF8F4;
+  --color-accent: #FFD166;        /* Vidám napsárga */
+  --color-accent-dark: #F4B92E;
+  --color-sky: #A8DADC;           /* Égszínkék */
+  --color-sky-light: #F1FAEE;
+  --color-bg: #FFFBF5;            /* Meleg krém háttér */
+  --color-card-bg: rgba(255, 255, 255, 0.85);
+  --color-text: #2C3E50;          /* Sötét pala a tökéletes olvashatóságért */
+  --color-text-muted: #5A6B7C;
+  --color-border: rgba(224, 122, 95, 0.15);
+  
+  --font-heading: 'Fredoka', sans-serif;
+  --font-body: 'Quicksand', sans-serif;
+  
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+  --radius-pill: 50px;
+  
+  --shadow-sm: 0 4px 12px rgba(224, 122, 95, 0.08);
+  --shadow-md: 0 8px 24px rgba(224, 122, 95, 0.12);
+  --shadow-lg: 0 16px 40px rgba(224, 122, 95, 0.16);
+  --shadow-focus: 0 0 0 4px rgba(255, 158, 125, 0.4);
+  
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.2s ease;
+  
+  --max-width: 1200px;
+}
+
+/* Reset és Alapbeállítások */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  font-size: 1.1rem;
+  overflow-x: hidden;
+  position: relative;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 6px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  border-radius: var(--radius-pill);
+  margin: 12px auto 0;
+}
+
+p {
+  margin-bottom: 1.2rem;
+  color: var(--color-text-muted);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  display: block;
+}
+
+/* Dekoratív Háttérelemek (Blobs) */
+.bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: -1;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.blob-1 {
+  top: -10%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background-color: var(--color-primary-light);
+}
+
+.blob-2 {
+  top: 30%;
+  left: -15%;
+  width: 600px;
+  height: 600px;
+  background-color: var(--color-secondary-light);
+}
+
+.blob-3 {
+  bottom: 10%;
+  right: -10%;
+  width: 550px;
+  height: 550px;
+  background-color: var(--color-sky-light);
+}
+
+/* Navigáció */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 85px;
+  background-color: rgba(255, 251, 245, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 1000;
+  transition: var(--transition-fast);
+}
+
+.navbar.scrolled {
+  height: 75px;
+  box-shadow: var(--shadow-sm);
+  background-color: rgba(255, 251, 245, 0.95);
+}
+
+.nav-container {
+  max-width: var(--max-width);
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--color-primary-dark), #E65A40);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+
+.logo-tagline {
+  font-size: 0.8rem;
+  color: var(--color-secondary-dark);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.logo-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-link {
+  font-weight: 600;
+  color: var(--color-text);
+  padding: 0.5rem 0.25rem;
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-pill);
+  transition: var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--color-primary-dark);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Kincsek Klub CTA Gomb */
+.cta-button-nav {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  color: var(--color-text);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-pill);
+  border: 2px solid transparent;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.cta-button-nav:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-accent-dark));
+  color: white;
+}
+
+/* Hamburger Menü Gomb */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+  width: 44px;
+  height: 44px;
+  position: relative;
+}
+
+.menu-toggle .bar {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background-color: var(--color-text);
+  border-radius: 3px;
+  transition: var(--transition-smooth);
+  position: absolute;
+  left: 9px;
+}
+
+.menu-toggle .bar:nth-child(1) { top: 15px; }
+.menu-toggle .bar:nth-child(2) { top: 22px; }
+.menu-toggle .bar:nth-child(3) { top: 29px; }
+
+.menu-toggle.active .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+  background-color: var(--color-primary-dark);
+}
+.menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+  background-color: var(--color-primary-dark);
+}
+
+/* Hero Szekció */
+.hero {
+  min-height: 100vh;
+  padding: 140px 2rem 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hero-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 158, 125, 0.3);
+}
+
+.hero-title span {
+  color: var(--color-primary-dark);
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  margin-bottom: 2.5rem;
+  color: var(--color-text-muted);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 1rem 2.25rem;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  border: none;
+  min-height: 48px;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+  box-shadow: 0 8px 20px rgba(255, 158, 125, 0.35);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(255, 158, 125, 0.45);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: var(--color-text);
+  border: 2px solid var(--color-primary-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image-wrapper {
+  position: relative;
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  overflow: hidden;
+  width: 100%;
+  max-width: 450px;
+  height: 450px;
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary-light));
+  border: 8px solid white;
+  box-shadow: var(--shadow-lg);
+  animation: blob-bounce 10s ease-in-out infinite alternate;
+}
+
+.hero-image-wrapper svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-floating-card {
+  position: absolute;
+  background: var(--color-card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card-top-right {
+  top: 15%;
+  right: -5%;
+  animation: float-y 5s ease-in-out infinite alternate;
+}
+
+.card-bottom-left {
+  bottom: 10%;
+  left: -5%;
+  animation: float-y 6s ease-in-out infinite alternate-reverse;
+}
+
+.floating-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-icon.secondary {
+  background-color: var(--color-secondary);
+}
+
+.floating-text h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.floating-text p {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+@keyframes blob-bounce {
+  0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+  100% { border-radius: 60% 40% 30% 70% / 50% 60% 40% 60%; }
+}
+
+@keyframes float-y {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-15px); }
+}
+
+/* Szekció Stílusok */
+.section {
+  padding: 100px 2rem;
+  position: relative;
+}
+
+.section-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* Művészeti Koncepció & Rólunk */
+.concept-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+
+.concept-card {
+  background: var(--color-card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--color-border);
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+.concept-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: var(--color-primary);
+}
+
+.concept-card:nth-child(2)::before { background-color: var(--color-secondary); }
+.concept-card:nth-child(3)::before { background-color: var(--color-sky); }
+.concept-card:nth-child(4)::before { background-color: var(--color-accent); }
+
+.concept-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(224, 122, 95, 0.3);
+}
+
+.concept-icon-box {
+  width: 65px;
+  height: 65px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: var(--color-primary-dark);
+}
+
+.concept-card:nth-child(2) .concept-icon-box {
+  background-color: var(--color-secondary-light);
+  color: var(--color-secondary-dark);
+}
+.concept-card:nth-child(3) .concept-icon-box {
+  background-color: var(--color-sky-light);
+  color: var(--color-sky);
+}
+.concept-card:nth-child(4) .concept-icon-box {
+  background-color: rgba(255, 209, 102, 0.15);
+  color: var(--color-accent-dark);
+}
+
+.concept-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.concept-card p {
+  margin: 0;
+}
+
+/* Rólunk Részletes Bemutatkozás */
+.about-detailed {
+  margin-top: 6rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.about-text h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-primary-dark);
+}
+
+.about-features {
+  list-style: none;
+  margin-top: 1.5rem;
+}
+
+.about-features li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.about-features li::before {
+  content: "♥";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-size: 1.2rem;
+}
+
+.about-image {
+  position: relative;
+}
+
+.about-img-frame {
+  border-radius: var(--radius-lg);
+  border: 10px solid white;
+  box-shadow: var(--shadow-md);
+  transform: rotate(-2deg);
+}
+
+.about-image::after {
+  content: "";
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 100px;
+  height: 100px;
+  background-image: radial-gradient(var(--color-accent) 20%, transparent 20%);
+  background-size: 15px 15px;
+  z-index: -1;
+}
+
+/* Napirend Szekció */
+.schedule-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 4rem auto 0;
+  position: relative;
+}
+
+.schedule-timeline::before {
+  content: "";
+  position: absolute;
+  left: 40px;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--color-primary-light), var(--color-secondary-light));
+  border-radius: var(--radius-pill);
+}
+
+.timeline-item {
+  display: flex;
+  gap: 2.5rem;
+  position: relative;
+}
+
+.timeline-badge {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background-color: white;
+  border: 4px solid var(--color-primary-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 2;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-fast);
+}
+
+.timeline-item:nth-child(even) .timeline-badge {
+  border-color: var(--color-secondary-light);
+}
+
+.timeline-badge .time {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.timeline-item:nth-child(even) .timeline-badge .time {
+  color: var(--color-secondary-dark);
+}
+
+.timeline-badge svg {
+  color: var(--color-text-muted);
+}
+
+.timeline-content {
+  background-color: white;
+  padding: 1.75rem var(--radius-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  flex-grow: 1;
+  border: 1px solid var(--color-border);
+  transition: var(--transition-fast);
+}
+
+.timeline-item:hover .timeline-badge {
+  transform: scale(1.1);
+  border-color: var(--color-primary);
+}
+
+.timeline-item:nth-child(even):hover .timeline-badge {
+  border-color: var(--color-secondary);
+}
+
+.timeline-item:hover .timeline-content {
+  box-shadow: var(--shadow-md);
+  border-color: rgba(224, 122, 95, 0.25);
+}
+
+.timeline-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.timeline-content p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Kapcsolat & Jelentkezés Szekció */
+.contact-section {
+  background-color: var(--color-secondary-light);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 4rem;
+  margin-top: 4rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-info-card {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  gap: 1.5rem;
+  border: 1px solid rgba(140, 211, 183, 0.2);
+}
+
+.contact-icon-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--color-secondary-light);
+  color: var(--color-secondary-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-details h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-details p, .contact-details a {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--color-text-muted);
+}
+
+.contact-details a:hover {
+  color: var(--color-secondary-dark);
+}
+
+/* Űrlap Stílusok a modern-web-guidance alapján */
+.contact-form-container {
+  background: white;
+  padding: 3rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+}
+
+.contact-form-container h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.form-group {
+  margin-block-end: 1.75rem;
+  position: relative;
+}
+
+.form-label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+  padding: 2px 0;
+}
+
+.form-control {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.85rem 1.25rem;
+  min-height: 48px;
+  background-color: var(--color-bg);
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  transition: var(--transition-fast);
+  box-sizing: border-box;
+}
+
+@media (pointer: coarse) {
+  .form-control {
+    min-height: 52px;
+  }
+}
+
+.form-control:focus {
+  outline: none;
+  background-color: white;
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-focus);
+}
+
+textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Form validációs állapotok stílusai */
+.form-control:user-invalid {
+  border-color: #E63946;
+  background-color: #FFF0F2;
+}
+
+.form-error-msg {
+  display: none;
+  font-size: 0.85rem;
+  color: #E63946;
+  font-weight: 600;
+  margin-top: 0.35rem;
+}
+
+.form-control:user-invalid + .form-error-msg {
+  display: block;
+}
+
+/* Felhasználói Adatkezelési Checkbox */
+.checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-block-end: 2rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip-path: inset(50%);
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+}
+
+.checkbox-label {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.checkbox-custom {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #D5DBDB;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: white;
+  transition: var(--transition-fast);
+  color: transparent;
+}
+
+input:checked + .checkbox-label .checkbox-custom {
+  border-color: var(--color-secondary);
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+input:focus-visible + .checkbox-label .checkbox-custom {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Form státusz visszajelzések */
+.form-status {
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-md);
+  margin-block-end: 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: none;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.form-status.success {
+  background-color: var(--color-secondary-light);
+  color: var(--color-secondary-dark);
+  border: 1px solid rgba(140, 211, 183, 0.3);
+  display: flex;
+}
+
+.form-status.error {
+  background-color: #FFF0F2;
+  color: #E63946;
+  border: 1px solid rgba(230, 57, 70, 0.2);
+  display: flex;
+}
+
+.submit-btn-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* Lábléc (Footer) */
+.footer {
+  background-color: #2C3E50;
+  color: white;
+  padding: 80px 2rem 40px;
+  position: relative;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+}
+
+.footer-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.footer-brand h3 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-brand p {
+  color: #95A5A6;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+.footer-links h4, .footer-contact h4 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+}
+
+.footer-links-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-links-list a {
+  color: #BDC3C7;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.footer-links-list a:hover {
+  color: var(--color-primary-light);
+  padding-left: 5px;
+}
+
+.footer-contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.footer-contact-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.footer-contact-item svg {
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.footer-contact-item div p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.footer-contact-item div p:first-child {
+  font-weight: 700;
+  color: white;
+}
+
+.footer-contact-item div p:last-child {
+  color: #BDC3C7;
+}
+
+.footer-contact-item a {
+  color: #BDC3C7;
+}
+
+.footer-contact-item a:hover {
+  color: var(--color-primary-light);
+}
+
+.footer-bottom {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  color: #95A5A6;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-bottom-links a {
+  color: #95A5A6;
+}
+
+.footer-bottom-links a:hover {
+  color: white;
+}
+
+/* Kincsek Klub Footer Banner */
+.footer-banner {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(255, 158, 125, 0.1), rgba(140, 211, 183, 0.1));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.banner-content h4 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.banner-content p {
+  color: #BDC3C7;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.btn-banner {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn-banner:hover {
+  background-color: var(--color-primary-dark);
+  box-shadow: 0 4px 15px rgba(255, 158, 125, 0.4);
+}
+
+/* Animációk Görgetésre (Scroll-driven animations a modern-web-guidance szerint) */
+@media (prefers-reduced-motion: no-preference) {
+  @supports ((animation-timeline: view()) and (animation-range: entry)) {
+    @keyframes fade-in-up {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+    }
+    
+    @keyframes shrink-out {
+      to {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.95);
+      }
+    }
+
+    .animate-scroll {
+      animation:
+        fade-in-up auto linear backwards,
+        shrink-out auto linear forwards;
+      animation-timeline: view();
+      animation-range: entry 10% entry 40%, exit 0% exit 30%;
+    }
+
+    /* Kifejezett Animációs Kártyák beúszása */
+    .concept-card {
+      animation: fade-in-up auto linear backwards;
+      animation-timeline: view();
+      animation-range: entry 5% entry 30%;
+    }
+    
+    .about-text, .about-image {
+      animation: fade-in-up auto linear backwards;
+      animation-timeline: view();
+      animation-range: entry 5% entry 35%;
+    }
+    
+    .timeline-item {
+      animation: fade-in-up auto linear backwards;
+      animation-timeline: view();
+      animation-range: entry 5% entry 35%;
+    }
+    
+    .contact-info-card, .contact-form-container {
+      animation: fade-in-up auto linear backwards;
+      animation-timeline: view();
+      animation-range: entry 5% entry 35%;
+    }
+  }
+}
+
+/* Régebbi böngészők és IntersectionObserver fallback stílusok */
+.js-reveal {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Amikor az IO fut, a JS rárakja a rejtő osztályt */
+  .js-reveal-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  
+  .js-reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobil Reszponzivitás Finomhangolások */
+@media (max-width: 992px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .hero {
+    padding-top: 120px;
+  }
+  
+  .hero-badge {
+    margin-inline: auto;
+  }
+  
+  .hero-actions {
+    justify-content: center;
+  }
+  
+  .hero-visual {
+    order: -1;
+  }
+  
+  .hero-image-wrapper {
+    width: 320px;
+    height: 320px;
+  }
+  
+  .about-detailed {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .about-image {
+    order: -1;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .footer-container {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: 85px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 85px);
+    background-color: var(--color-bg);
+    flex-direction: column;
+    padding: 3rem 2rem;
+    gap: 2rem;
+    transform: translateX(100%);
+    transition: var(--transition-smooth);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    overflow-y: auto;
+  }
+  
+  .nav-menu.active {
+    transform: translateX(0);
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+  
+  .cta-button-nav {
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .schedule-timeline::before {
+    left: 20px;
+  }
+  
+  .timeline-badge {
+    width: 44px;
+    height: 44px;
+    border-width: 2px;
+  }
+  
+  .timeline-badge .time {
+    font-size: 0.8rem;
+  }
+  
+  .timeline-badge svg {
+    display: none;
+  }
+  
+  .timeline-item {
+    gap: 1.25rem;
+  }
+  
+  .timeline-content {
+    padding: 1.25rem;
+  }
+  
+  .contact-form-container {
+    padding: 2rem 1.5rem;
+  }
+  
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .footer-banner {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}

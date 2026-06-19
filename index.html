@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Szupererős SEO Címsor a kulcsszavakkal -->
+  <title>Kincsek Művészeti Családi Bölcsőde Budapest | Bölcsőde 9. kerület</title>
+  
+  <!-- Keresőoptimalizált Meta Leírás kulcsszó sűrűséggel -->
+  <meta name="description" content="A Kincsek Művészeti Családi Bölcsőde Budapest 9. kerületében (Tűzoltó utca 68.) várja a kicsiket. Családias bölcsőde zenei és művészeti fókusszal Ferencváros szívében. Kis létszámú csoportok, kiemelt figyelem és szeretet. Jelentkezz most!">
+  <meta name="keywords" content="Kincsek, Bölcsőde, Bölcsőde Budapest, Bölcsőde 9. kerület, családi bölcsőde, magánbölcsőde Ferencváros, művészeti bölcsőde Budapest, Tűzoltó utca 68">
+  <meta name="author" content="Kincsek Bölcsőde">
+  
+  <!-- SEO & Open Graph (Közösségi megosztáshoz) -->
+  <meta property="og:title" content="Kincsek Művészeti Családi Bölcsőde Budapest | Bölcsőde 9. kerület">
+  <meta property="og:description" content="Kincsek Családi Bölcsőde Budapest 9. kerületében. Kiemelt művészeti és zenei foglalkozások, kis létszám és családias hangulat.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kincsekbolcsode.hu">
+  
+  <!-- Helyi vállalkozás struktúrált adatok (JSON-LD) a Google Kereső és Térkép első helyezéséhez -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DayCare",
+    "name": "Kincsek Művészeti Családi Bölcsőde",
+    "alternateName": "Kincsek Bölcsőde Budapest 9. kerület",
+    "description": "Zene- és művészetközpontú családias magánbölcsőde Budapest IX. kerületében, Ferencvárosban.",
+    "image": "https://kincsekbolcsode.hu/assets/logo.png",
+    "@id": "https://kincsekbolcsode.hu/#daycare",
+    "url": "https://kincsekbolcsode.hu",
+    "telephone": "+36205232799",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Tűzoltó utca 68.",
+      "addressLocality": "Budapest",
+      "postalCode": "1094",
+      "addressRegion": "Budapest",
+      "addressCountry": "HU"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 47.481358,
+      "longitude": 19.078342
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "08:00",
+      "closes": "17:00"
+    },
+    "sameAs": [
+      "https://kincsekklub.hu"
+    ]
+  }
+  </script>
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Dekoratív háttér elemek -->
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+  <div class="bg-blob blob-3"></div>
+
+  <!-- Navigáció -->
+  <header class="navbar" id="main-header">
+    <div class="nav-container">
+      <a href="#hero" class="logo-link" id="nav-logo-link" aria-label="Kincsek Bölcsőde Budapest Főoldal">
+        <!-- Színes, játékos bölcsőde logó SVG-vel -->
+        <svg width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="45" fill="#FFEBE3" />
+          <path d="M35 60C32 45 42 35 50 35C58 35 68 45 65 60C62 75 38 75 35 60Z" fill="#FF9E7D" />
+          <circle cx="42" cy="48" r="5" fill="#8CD3B7" />
+          <circle cx="58" cy="48" r="5" fill="#FFD166" />
+          <path d="M48 60C50 62 52 62 54 60" stroke="#2C3E50" stroke-width="3" stroke-linecap="round" />
+          <path d="M50 20C40 20 30 25 25 35C28 35 30 38 32 40C35 30 45 28 50 28C55 28 65 30 68 40C70 38 72 35 75 35C70 25 60 20 50 20Z" fill="#8CD3B7" />
+        </svg>
+        <div class="logo-wrapper">
+          <span class="logo-text">Kincsek</span>
+          <span class="logo-tagline">Művészeti Bölcsőde</span>
+        </div>
+      </a>
+
+      <!-- Hamburger menü gomb mobilra -->
+      <button class="menu-toggle" id="menu-toggle-btn" aria-expanded="false" aria-controls="nav-menu-list" aria-label="Menü megnyitása/bezárása">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <!-- Navigációs menüpontok -->
+      <nav class="nav-menu" id="nav-menu-list">
+        <ul style="display: contents; list-style: none;">
+          <li><a href="#rolunk" class="nav-link" id="nav-link-rolunk">Rólunk</a></li>
+          <li><a href="#koncepcio" class="nav-link" id="nav-link-koncepcio">Művészeti Koncepció</a></li>
+          <li><a href="#napirend" class="nav-link" id="nav-link-napirend">Napirend</a></li>
+          <li><a href="#kapcsolat" class="nav-link" id="nav-link-kapcsolat">Jelentkezés</a></li>
+        </ul>
+        <a href="https://kincsekklub.hu" target="_blank" rel="noopener noreferrer" class="cta-button-nav" id="nav-cta-kincsekklub">
+          <span>Kincsek Klub</span>
+          <!-- Külső link ikon -->
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero (Bemutatkozó) Szekció - SEO-fókuszú címsorral -->
+    <section class="hero" id="hero">
+      <div class="hero-container">
+        <div class="hero-info">
+          <div class="hero-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.62L12 2L9.19 8.62L2 9.24L7.45 13.97L5.82 21L12 17.27Z"/>
+            </svg>
+            <span>Kincsek Művészeti Családi Bölcsőde Budapest</span>
+          </div>
+          <!-- SEO szempontból kiemelt H1 címsor, ami a keresett kulcsszavakra lő -->
+          <h1 class="hero-title">Kincsek Művészeti Családi Bölcsőde Budapest 9. kerületében</h1>
+          <p class="hero-description">
+            Szeretettel várunk minden kisgyermeket a IX. kerületben, a <strong>Tűzoltó utca 68.</strong> szám alatt található családi magánbölcsődénkben. Biztonságos, játékos és inspiráló <strong>bölcsőde Budapest</strong> szívében, zenei és képzőművészeti fókusszal.
+          </p>
+          <div class="hero-actions">
+            <a href="#kapcsolat" class="btn btn-primary" id="hero-btn-apply">
+              <span>Jelentkezés bölcsődébe</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="https://kincsekklub.hu" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="hero-btn-club">
+              <span>Ismerd meg közösségi programjainkat a Kincsek Klubban!</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-image-wrapper">
+            <!-- Játékos illusztráció a gyermekek művészeti neveléséről (Inline SVG) -->
+            <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Gyermekek művészeti fejlesztése a Kincsek Bölcsőde Budapest foglalkozásain">
+              <rect width="500" height="500" fill="#FFFBF5" />
+              <!-- Napocska -->
+              <circle cx="430" cy="70" r="40" fill="#FFD166" />
+              <!-- Kreatív felhő alakzatok -->
+              <path d="M60 200C60 170 90 140 130 140C170 140 200 170 200 200C200 220 180 250 160 260H100C80 250 60 220 60 200Z" fill="#A8DADC" opacity="0.6"/>
+              <!-- Gyermek és szülő/pedagógus közös alkotása absztrakt formákkal -->
+              <circle cx="250" cy="300" r="120" fill="#EBF8F4" />
+              <circle cx="210" cy="330" r="70" fill="#FFEBE3" />
+              <!-- Művészi ecsetvonások és színek -->
+              <path d="M150 360 C 200 280, 300 400, 380 300" stroke="#FF9E7D" stroke-width="15" stroke-linecap="round" opacity="0.8"/>
+              <path d="M180 400 C 220 320, 280 420, 350 350" stroke="#8CD3B7" stroke-width="12" stroke-linecap="round" opacity="0.8"/>
+              <path d="M130 320 C 180 250, 320 300, 370 240" stroke="#FFD166" stroke-width="18" stroke-linecap="round" opacity="0.7"/>
+              <!-- Kotta szimbólumok a zenei nevelésre utalva -->
+              <path d="M120 120H135V150H120V120ZM120 130V150H110V140H120V130Z" fill="#2C3E50" />
+              <circle cx="115" cy="150" r="8" fill="#2C3E50"/>
+              <circle cx="140" cy="145" r="8" fill="#2C3E50"/>
+              <path d="M123 120V145" stroke="#2C3E50" stroke-width="2"/>
+              <path d="M148 120V140" stroke="#2C3E50" stroke-width="2"/>
+              <path d="M123 125L148 120" stroke="#2C3E50" stroke-width="2"/>
+            </svg>
+          </div>
+
+          <!-- Két lebegő kártya (Micro-interaction) -->
+          <div class="hero-floating-card card-top-right">
+            <div class="floating-icon">
+              <!-- Zene ikon -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18V5l12-2v13"></path>
+                <circle cx="6" cy="18" r="3"></circle>
+                <circle cx="18" cy="16" r="3"></circle>
+              </svg>
+            </div>
+            <div class="floating-text">
+              <h4>Játékos Zenei Nevelés</h4>
+              <p>Minden nap dalolunk!</p>
+            </div>
+          </div>
+
+          <div class="hero-floating-card card-bottom-left">
+            <div class="floating-icon secondary">
+              <!-- Paletta ikon -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 14.7255 3.09032 17.1962 4.85857 19C5.03456 19.176 5.12256 19.264 5.18432 19.3734C5.30594 19.5888 5.27581 19.8596 5.11029 20.0416C4.94478 20.2236 4.70889 20.2458 4.51792 20.0935C3.37691 19.1824 2.65217 17.8244 2.65217 16.3C2.65217 15.0298 3.682 14 4.95217 14C5.75338 14 6.4687 14.4103 6.89279 15.0381C7.31688 15.666 7.37525 16.401 7.04221 17.0396C6.70918 17.6782 6.89246 18.4552 7.46914 18.895C8.04581 19.3348 8.87707 19.3243 9.44234 18.8703C10.0076 18.4162 10.1557 17.6322 9.80005 17.0094C9.44439 16.3866 9.53934 15.6027 10.0242 15.0805C10.509 14.5583 11.2721 14.4173 11.8906 14.7431C12.5091 15.0688 12.8369 15.7766 12.671 16.4529C12.5052 17.1292 12.9099 17.8093 13.5606 18.0039C14.2114 18.1985 14.9082 17.8488 15.1132 17.2023C15.3182 16.5558 15.0594 15.845 14.5332 15.42C14.0071 14.995 13.3155 14.9818 12.7848 15.39" stroke-linecap="round" stroke-linejoin="round"></path>
+                <circle cx="7.5" cy="10.5" r="1.5" fill="currentColor"></circle>
+                <circle cx="11.5" cy="7.5" r="1.5" fill="currentColor"></circle>
+                <circle cx="16.5" cy="9.5" r="1.5" fill="currentColor"></circle>
+                <circle cx="15.5" cy="14.5" r="1.5" fill="currentColor"></circle>
+              </svg>
+            </div>
+            <div class="floating-text">
+              <h4>Kreatív Alkotás</h4>
+              <p>Festés, gyurma, rajzolás</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rólunk & Művészeti Koncepció Szekció - SEO optimalizált H2 címmel -->
+    <section class="section" id="rolunk">
+      <div class="section-container">
+        <h2 id="concept-title">Kincsek Művészeti Családi Bölcsőde Budapest</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">
+          Hiszünk abban, hogy a kora gyermekkori művészeti élmények megalapozzák a kreatív gondolkodást. Ha az ideális <strong>bölcsőde 9. kerület</strong> vagy <strong>bölcsőde Budapest</strong> kategóriában a keresésed tárgya, a Kincsek a legjobb választás.
+        </p>
+
+        <div class="concept-grid">
+          <!-- Kártya 1: Művészeti Fejlesztés -->
+          <div class="concept-card" id="card-art">
+            <div class="concept-icon-box">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"></path>
+                <path d="M12 8V16"></path>
+                <path d="M8 12H16"></path>
+              </svg>
+            </div>
+            <h3>Képzőművészet</h3>
+            <p>Ujjfestés, agyagozás, kollázsok készítése és természetes anyagok használata. Nálunk az alkotás folyamata és a felfedezés öröme a legfontosabb.</p>
+          </div>
+
+          <!-- Kártya 2: Zene és Mozgás -->
+          <div class="concept-card" id="card-music">
+            <div class="concept-icon-box">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18V5l12-2v13"></path>
+                <circle cx="6" cy="18" r="3"></circle>
+                <circle cx="18" cy="16" r="3"></circle>
+              </svg>
+            </div>
+            <h3>Zene & Mozgás</h3>
+            <p>Népdalok, mondókák, ölbeli játékok és ritmushangszerek használata. A zene fejleszti a beszédet, a mozgás pedig a koordinációt és az egyensúlyt.</p>
+          </div>
+
+          <!-- Kártya 3: Kis csoportlétszám -->
+          <div class="concept-card" id="card-groups">
+            <div class="concept-icon-box">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3>Családias légkör</h3>
+            <p>Maximum 7-8 fős kis csoportokkal dolgozunk, így minden kisgyermek személyre szabott figyelmet, szeretetet és gondoskodást kap.</p>
+          </div>
+
+          <!-- Kártya 4: Érzelmi biztonság -->
+          <div class="concept-card" id="card-safety">
+            <div class="concept-icon-box">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </div>
+            <h3>Érzelmi biztonság</h3>
+            <p>Szoros együttműködés a szülőkkel, zökkenőmentes beszoktatás és kiszámítható, érzelmileg stabil, támogató környezet a nap minden percében.</p>
+          </div>
+        </div>
+
+        <!-- Részletes bemutatkozás és Illusztráció -->
+        <div class="about-detailed" id="koncepcio">
+          <div class="about-text">
+            <h3>Miért a Kincsek Művészeti Bölcsőde?</h3>
+            <p>
+              A Tűzoltó utca 68. alatti bölcsődénk kialakításakor arra törekedtünk, hogy a kicsik otthon érezzék magukat. Barátságos tereink tele vannak inspiráló, természetes játékokkal és alkotóeszközökkel.
+            </p>
+            <p>
+              Pedagógusaink nagy tapasztalattal és végtelen türelemmel segítik a gyermekek önálló személyiségének kibontakozását, miközben kiemelt figyelmet fordítunk a művészeti nevelésre. A <strong>Kincsek</strong> név garancia a minőségi gondoskodásra.
+            </p>
+            <ul class="about-features">
+              <li>Művészetközpontú egyéni fejlesztés</li>
+              <li>Egészséges, ellenőrzött bio alapanyagú ételek naponta négyszer</li>
+              <li>Saját fejlesztő és biztonságos játszósarok</li>
+              <li>Kapcsolódás a Kincsek Klub családi programjaihoz</li>
+            </ul>
+          </div>
+          <div class="about-image">
+            <!-- Absztrakt, meleg játszószoba illusztráció SVG-vel -->
+            <svg viewBox="0 0 450 350" fill="none" class="about-img-frame" xmlns="http://www.w3.org/2000/svg" aria-label="Kreatív környezet a Kincsek Bölcsőde Budapest játszószobájában">
+              <rect width="450" height="350" fill="#FFFDF9"/>
+              <!-- Szőnyeg -->
+              <ellipse cx="225" cy="300" rx="180" ry="30" fill="#E8F8F2"/>
+              <!-- Fajátékok és polc -->
+              <rect x="50" y="220" width="100" height="60" rx="5" fill="#FFEBE3" stroke="#FF9E7D" stroke-width="2"/>
+              <rect x="70" y="240" width="20" height="40" fill="#8CD3B7" />
+              <circle cx="120" cy="250" r="15" fill="#FFD166" />
+              <!-- Tipisátor (játék kuckó) -->
+              <path d="M280 280 L350 120 L420 280 Z" fill="#FFEBE3" stroke="#FF9E7D" stroke-width="3"/>
+              <path d="M330 280 L350 180 L370 280 Z" fill="#FFFDF9" />
+              <line x1="335" y1="130" x2="310" y2="105" stroke="#FF9E7D" stroke-width="4"/>
+              <line x1="365" y1="130" x2="390" y2="105" stroke="#FF9E7D" stroke-width="4"/>
+              <!-- Gyermekasztal ecsettel -->
+              <rect x="180" y="250" width="70" height="10" rx="3" fill="#FFD166" />
+              <line x1="195" y1="260" x2="190" y2="295" stroke="#FFD166" stroke-width="4" stroke-linecap="round"/>
+              <line x1="235" y1="260" x2="240" y2="295" stroke="#FFD166" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="215" cy="240" r="10" fill="#8CD3B7" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Napirend Szekció - SEO-fókuszú H2 címmel -->
+    <section class="section" id="napirend" style="background-color: rgba(255, 255, 255, 0.4);">
+      <div class="section-container">
+        <h2>Családias Bölcsődei Napirendünk (9. kerület)</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; font-size: 1.2rem;">
+          A kisgyermekek számára a napirend jelenti a biztonságot és a kiszámíthatóságot. Tevékenységeinket rugalmasan, a gyermekek aktuális igényeihez igazítva alakítjuk.
+        </p>
+
+        <div class="schedule-timeline">
+          <!-- Item 1: Érkezés -->
+          <div class="timeline-item">
+            <div class="timeline-badge">
+              <span class="time">08:00</span>
+              <!-- Napkelte ikon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v2M4.93 4.93l1.41 1.41M2 12h2M19.07 4.93l-1.41 1.41M20 12h2M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"></path>
+              </svg>
+            </div>
+            <div class="timeline-content">
+              <h3>Érkezés és Szabad Játék</h3>
+              <p>A gyermekek folyamatos érkezése, kötetlen beszélgetés a szülőkkel. Nyugodt, szabad játék a szobában, ráhangolódás a napra.</p>
+            </div>
+          </div>
+
+          <!-- Item 2: Reggeli -->
+          <div class="timeline-item">
+            <div class="timeline-badge">
+              <span class="time">08:30</span>
+              <!-- Reggeli ikon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <div class="timeline-content">
+              <h3>Közös Egészséges Reggeli</h3>
+              <p>Finom, vitaminokban gazdag reggeli zöldségekkel, pékáruval és gyümölcsteával. Tisztálkodás, kézmosás.</p>
+            </div>
+          </div>
+
+          <!-- Item 3: Foglalkozás -->
+          <div class="timeline-item">
+            <div class="timeline-badge">
+              <span class="time">09:00</span>
+              <!-- Alkotás ikon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"></path>
+              </svg>
+            </div>
+            <div class="timeline-content">
+              <h3>Művészeti & Zenei Foglalkozás</h3>
+              <p>Irányított képzőművészeti tevékenységek (festés, gyurma, ragasztás) vagy közös zene, ritmusjátékok, torna és meseolvasás.</p>
+            </div>
+          </div>
+
+          <!-- Item 4: Udvar -->
+          <div class="timeline-item">
+            <div class="timeline-badge">
+              <span class="time">10:00</span>
+              <!-- Kültéri ikon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v20M2 12h20"></path>
+              </svg>
+            </div>
+            <div class="timeline-content">
+              <h3>Udvari Szabad Játék / Séta</h3>
+              <p>Jó idő esetén játék a saját biztonságos udvarunkon, homokozás, mozgásfejlesztő kismotorozás vagy séta a közeli parkban.</p>
+            </div>
+          </div>
+
+          <!-- Item 5: Ebéd -->
+          <div class="timeline-item">
+            <div class="timeline-badge">
+              <span class="time">11:30</span>
+              <!-- Ebéd ikon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM12 6v6l4 2"></path>
+              </svg>
+            </div>
+            <div class="timeline-content">
+              <h3>Készülődés és Kiadós Ebéd</h3>
+              <p>Kézmosás, önállóságra nevelés az étkezés során. Egészséges kétfogásos meleg ebéd elfogyasztása.</p>
+            </div>
+          </div>
+
+          <!-- Item 6: Csendespihenő -->
+          <div class="timeline-item">
+            <div class="timeline-badge">
+              <span class="time">12:00</span>
+              <!-- Alvás ikon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 4v16M2 8h20M22 4v16M2 18h20M2 12h20M12 8v10"></path>
+              </svg>
+            </div>
+            <div class="timeline-content">
+              <h3>Meseolvasás és Csendespihenő</h3>
+              <p>Személyes alvóka, cumi vagy takaró kíséretében, halk zene és halk meseolvasás mellett pihennek és alszanak a gyerekek.</p>
+            </div>
+          </div>
+
+          <!-- Item 7: Uzsonna -->
+          <div class="timeline-item">
+            <div class="timeline-badge">
+              <span class="time">15:00</span>
+              <!-- Uzsonna ikon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M8 12h8"></path>
+              </svg>
+            </div>
+            <div class="timeline-content">
+              <h3>Uzsonna és Délutáni Játék</h3>
+              <p>Ébredés utáni uzsonnázás (gyümölcs, joghurt, keksz), majd játék a szülők megérkezéséig és hazamenetelig.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kapcsolat & Jelentkezés Szekció - SEO-fókuszú H2 címmel -->
+    <section class="section contact-section" id="kapcsolat">
+      <div class="section-container">
+        <h2>Kapcsolat & Jelentkezés – Kincsek Bölcsőde Budapest</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; font-size: 1.2rem;">
+          Szeretnéd megtekinteni a bölcsődénket személyesen is? Küldd el jelentkezésed vagy kérdésed, és munkatársunk 24 órán belül felveszi veled a kapcsolatot!
+        </p>
+
+        <div class="contact-grid">
+          <!-- Kapcsolati információk -->
+          <div class="contact-info">
+            <div class="contact-info-card">
+              <div class="contact-icon-wrapper">
+                <!-- Helyszín ikon -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h3>Címünk</h3>
+                <p>1094 Budapest, Tűzoltó utca 68.</p>
+                <p style="font-size: 0.85rem; margin-top: 0.25rem;">(IX. kerület / Ferencváros, könnyen megközelíthető helyen)</p>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-icon-wrapper">
+                <!-- Telefon ikon -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h3>Telefon</h3>
+                <p><a href="tel:+36205232799" id="contact-phone-link">+36-20-523-2799</a></p>
+                <p style="font-size: 0.85rem; margin-top: 0.25rem;">Hétfőtől-Péntekig: 08:00 - 17:00</p>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-icon-wrapper">
+                <!-- Email ikon -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h3>Email cím</h3>
+                <p><a href="mailto:kincsek9@gmail.com" id="contact-email-link">kincsek9@gmail.com</a></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Jelentkezési Űrlap (Formspree és magassági optimalizálás mobilra) -->
+          <div class="contact-form-container">
+            <h3>Jelentkezési Lap</h3>
+            
+            <!-- Sikeres / Sikertelen elküldés visszajelzés (JS kezeli) -->
+            <div class="form-status" id="form-status-box" role="alert"></div>
+
+            <form action="https://formspree.io/f/placeholder_id" method="POST" id="nursery-contact-form" novalidate>
+              <div class="form-group">
+                <label for="parent-name" class="form-label">Szülő teljes neve *</label>
+                <input type="text" id="parent-name" name="szulo_neve" class="form-control" autocomplete="name" required placeholder="Pl. Kis Mária">
+                <span class="form-error-msg" id="parent-name-error">Kérjük, add meg a nevedet!</span>
+              </div>
+
+              <div class="form-group">
+                <label for="child-name" class="form-label">Gyermek neve és születési ideje *</label>
+                <input type="text" id="child-name" name="gyermek_adatai" class="form-control" required placeholder="Pl. Kis Bence, 2024.05.12.">
+                <span class="form-error-msg" id="child-name-error">Kérjük, add meg a gyermek nevét és születési dátumát!</span>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Email cím *</label>
+                <input type="email" id="email" name="email" class="form-control" autocomplete="email" required placeholder="Pl. maria@example.com">
+                <span class="form-error-msg" id="email-error">Kérjük, adj meg egy érvényes email címet!</span>
+              </div>
+
+              <div class="form-group">
+                <label for="phone" class="form-label">Telefonszám *</label>
+                <input type="tel" id="phone" name="telefon" class="form-control" autocomplete="tel" required placeholder="Pl. +36 30 123 4567" pattern="^\+?[0-9\s\-]{9,15}$">
+                <span class="form-error-msg" id="phone-error">Kérjük, adj meg egy érvényes telefonszámot!</span>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">Üzenet / Kérdés (opcionális)</label>
+                <textarea id="message" name="uzenet" class="form-control" placeholder="Bármilyen kérdésed van a beszoktatással vagy egyedi igényekkel kapcsolatban..."></textarea>
+              </div>
+
+              <!-- Adatvédelmi checkbox -->
+              <div class="checkbox-container">
+                <input type="checkbox" id="privacy-check" name="adatvedelem" class="visually-hidden" required>
+                <label for="privacy-check" class="checkbox-label">
+                  <span class="checkbox-custom" aria-hidden="true">✓</span>
+                  <span>Elfogadom az Adatvédelmi Tájékoztatót, és hozzájárulok, hogy a bölcsőde kapcsolatba lépjen velem a megadott adatokon. *</span>
+                </label>
+              </div>
+
+              <div class="submit-btn-wrapper">
+                <button type="submit" class="btn btn-primary" id="form-submit-btn">
+                  <span>Jelentkezés elküldése</span>
+                  <!-- Repülő papír ikon -->
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lábléc (Footer) - Fixen a Tűzoltó utca 68. címmel és keresztlinkeléssel -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3>Kincsek Bölcsőde</h3>
+        <p>A Kincsek Művészeti Családi Bölcsőde szeretetteljes, művészet- és gyermekközpontú napközbeni ellátást biztosít Budapest belvárosában, Ferencvárosban.</p>
+        <p>Alapozzuk meg közösen gyermeked boldog és kreatív jövőjét a legkreatívabb 9. kerületi bölcsődében!</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Linkek</h4>
+        <ul class="footer-links-list">
+          <li><a href="#rolunk" id="footer-link-rolunk">Rólunk</a></li>
+          <li><a href="#koncepcio" id="footer-link-koncepcio">Művészeti Koncepció</a></li>
+          <li><a href="#napirend" id="footer-link-napirend">Napirend</a></li>
+          <li><a href="#kapcsolat" id="footer-link-kapcsolat">Jelentkezés</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Elérhetőségek</h4>
+        <div class="footer-contact-details">
+          <div class="footer-contact-item">
+            <!-- Térkép ikon -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <div>
+              <p>Bölcsőde Címe</p>
+              <p><a href="https://maps.google.com/?q=Budapest,+Tűzoltó+utca+68." target="_blank" rel="noopener noreferrer">1094 Budapest, Tűzoltó utca 68.</a></p>
+            </div>
+          </div>
+
+          <div class="footer-contact-item">
+            <!-- Telefon ikon -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <div>
+              <p>Telefon</p>
+              <p><a href="tel:+36205232799">+36-20-523-2799</a></p>
+            </div>
+          </div>
+
+          <div class="footer-contact-item">
+            <!-- Email ikon -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <div>
+              <p>Email</p>
+              <p><a href="mailto:kincsek9@gmail.com">kincsek9@gmail.com</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kincsek Klub Promóciós Banner a Footerben -->
+      <div class="footer-banner" id="footer-kincsek-klub-banner">
+        <div class="banner-content">
+          <h4>Közösségi élet a Kincsek Klubban!</h4>
+          <p>Csatlakozz szülőklubunkhoz, hétvégi családi napjainkhoz és művészeti workshopjainkhoz.</p>
+        </div>
+        <a href="https://kincsekklub.hu" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-banner" id="footer-banner-cta">
+          <span>Ismerd meg közösségi programjainkat a Kincsek Klubban!</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Kincsek Művészeti Családi Bölcsőde. Minden jog fenntartva.</p>
+      <div class="footer-bottom-links">
+        <a href="#rolunk">Adatvédelmi Tájékoztató</a>
+        <a href="#kapcsolat">Kapcsolat</a>
+        <a href="https://kincsekklub.hu" target="_blank" rel="noopener noreferrer">Kincsek Klub</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script.js -->
+  <script src="script.js"></script>
+</body>
+</html>
