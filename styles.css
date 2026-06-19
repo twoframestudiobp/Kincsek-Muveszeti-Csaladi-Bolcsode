@@ -16,6 +16,12 @@
   --color-text: #2C3E50;          /* Sötét pala a tökéletes olvashatóságért */
   --color-text-muted: #5A6B7C;
   --color-border: rgba(224, 122, 95, 0.15);
+  --color-navbar-bg: rgba(255, 251, 245, 0.85);
+  --color-navbar-scrolled: rgba(255, 251, 245, 0.95);
+  --color-footer-bg: #2C3E50;
+  --color-footer-text: rgba(255,255,255,0.85);
+  --color-input-bg: #ffffff;
+  --color-input-border: rgba(224, 122, 95, 0.3);
   
   --font-heading: 'Fredoka', sans-serif;
   --font-body: 'Quicksand', sans-serif;
@@ -146,18 +152,18 @@ img {
   left: 0;
   width: 100%;
   height: 85px;
-  background-color: rgba(255, 251, 245, 0.85);
+  background-color: var(--color-navbar-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border);
   z-index: 1000;
-  transition: var(--transition-fast);
+  transition: background-color 0.3s ease, height 0.2s ease, box-shadow 0.2s ease;
 }
 
 .navbar.scrolled {
   height: 75px;
   box-shadow: var(--shadow-sm);
-  background-color: rgba(255, 251, 245, 0.95);
+  background-color: var(--color-navbar-scrolled);
 }
 
 .nav-container {
@@ -1304,5 +1310,197 @@ input:focus-visible + .checkbox-label .checkbox-custom {
     flex-direction: column;
     text-align: center;
     align-items: center;
+  }
+}
+
+/* ============================================
+   SÖTÉT MÓD (Dark Mode)
+   ============================================ */
+
+[data-theme="dark"] {
+  --color-bg: #1A1A2E;
+  --color-card-bg: rgba(255, 255, 255, 0.06);
+  --color-text: #F0EAE2;
+  --color-text-muted: #A89B8C;
+  --color-border: rgba(255, 158, 125, 0.12);
+  --color-primary-light: rgba(255, 158, 125, 0.15);
+  --color-secondary-light: rgba(140, 211, 183, 0.1);
+  --color-sky-light: rgba(168, 218, 220, 0.08);
+  --color-navbar-bg: rgba(22, 22, 42, 0.88);
+  --color-navbar-scrolled: rgba(22, 22, 42, 0.97);
+  --color-footer-bg: #0f0f1a;
+  --color-footer-text: rgba(240, 234, 226, 0.8);
+  --color-input-bg: rgba(255, 255, 255, 0.06);
+  --color-input-border: rgba(255, 158, 125, 0.25);
+  --shadow-sm: 0 4px 12px rgba(0,0,0,0.3);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.4);
+  --shadow-lg: 0 16px 40px rgba(0,0,0,0.5);
+}
+
+[data-theme="dark"] body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .bg-blob {
+  opacity: 0.12;
+}
+
+[data-theme="dark"] .hero-image-wrapper svg rect,
+[data-theme="dark"] .about-img-frame rect {
+  fill: #1e1e30;
+}
+
+[data-theme="dark"] .hero-floating-card {
+  background: rgba(30, 30, 50, 0.9);
+  border-color: rgba(255,158,125,0.2);
+}
+
+[data-theme="dark"] .concept-card {
+  background: var(--color-card-bg);
+  border-color: rgba(255,255,255,0.06);
+}
+
+[data-theme="dark"] .timeline-item .timeline-content {
+  background: var(--color-card-bg);
+  border-color: rgba(255,255,255,0.06);
+}
+
+[data-theme="dark"] .contact-info-card {
+  background: var(--color-card-bg);
+}
+
+[data-theme="dark"] .contact-form-container {
+  background: var(--color-card-bg);
+}
+
+[data-theme="dark"] .form-control {
+  background-color: var(--color-input-bg);
+  border-color: var(--color-input-border);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .form-control::placeholder {
+  color: rgba(168, 155, 140, 0.6);
+}
+
+[data-theme="dark"] .form-control:focus {
+  background-color: rgba(255,255,255,0.09);
+  border-color: var(--color-primary);
+}
+
+[data-theme="dark"] .footer {
+  background-color: var(--color-footer-bg);
+}
+
+[data-theme="dark"] .footer-bottom {
+  border-color: rgba(255,255,255,0.08);
+}
+
+[data-theme="dark"] section[style*="background-color"] {
+  background-color: rgba(255,255,255,0.02) !important;
+}
+
+[data-theme="dark"] .checkbox-custom {
+  border-color: var(--color-input-border);
+  background-color: var(--color-input-bg);
+}
+
+[data-theme="dark"] .footer-banner {
+  background: linear-gradient(135deg, rgba(255,158,125,0.15), rgba(255,209,102,0.1));
+  border-color: rgba(255,158,125,0.2);
+}
+
+/* ============================================
+   TÉMAVÁLTÓ ÉS NYELVVÁLTÓ GOMBOK
+   ============================================ */
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 0.75rem;
+  flex-shrink: 0;
+}
+
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  background: var(--color-card-bg);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+  transform: rotate(20deg) scale(1.1);
+}
+
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  background: var(--color-card-bg);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 3px;
+  gap: 2px;
+  transition: var(--transition-fast);
+}
+
+.lang-btn {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 0.28rem 0.6rem;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  line-height: 1;
+}
+
+.lang-btn:hover {
+  color: var(--color-primary-dark);
+}
+
+.lang-btn.active {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(255,158,125,0.4);
+}
+
+[data-theme="dark"] .lang-btn.active {
+  color: #1A1A2E;
+}
+
+/* Mobil: controls átrendezés */
+@media (max-width: 768px) {
+  .nav-controls {
+    gap: 0.4rem;
+    margin-left: 0;
+    margin-right: 0.5rem;
+  }
+
+  .theme-toggle-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .lang-btn {
+    font-size: 0.72rem;
+    padding: 0.24rem 0.5rem;
   }
 }
